@@ -22,3 +22,21 @@ char character(char start, int offset)
     return char(n);
 }
 
+int main()
+{
+    cout << character('a', 1) << endl;
+    
+    try{
+        character('a', -1);
+    }
+    catch(invalidRangeException i){
+        cout << "Error! Invalid Range Exception!" << endl;
+    }
+    
+    try{
+        character('?', -1);
+    }
+    catch(invalidCharacterException i){
+        cout << "Error! Invalid Character Exception!" << endl;
+    }
+}
